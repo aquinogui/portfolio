@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevMaster - Soluções Web Inovadoras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+        body.modal-active {
+            overflow-x: hidden;
+            overflow-y: visible !important;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <header id="header" class="fixed w-full z-50 transition-all duration-300 bg-white bg-opacity-90 backdrop-blur-sm dark:bg-gray-800 dark:bg-opacity-90">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary dark:text-white">
+                <img src="logodev.png" alt="DevMaster Logo" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Início</a>
+                <a href="#services" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Serviços</a>
+                <a href="#portfolio" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Portfólio</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Habilidades</a>
+                <a href="#about" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Sobre</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">Contato</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="darkModeToggle" class="text-gray-600 hover:text-primary transition-colors duration-300 dark:text-gray-300 dark:hover:text-white">
+                    <i class="fas fa-sun"></i>
+                    <span class="sr-only">Alternar modo escuro</span>
+                </button>
+                <a href="#contact" class="bg-primary text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Solicitar Orçamento</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Transforme sua presença online com soluções web inovadoras</h1>
+                <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">Criamos experiências digitais únicas que impulsionam seu negócio e encantam seus clientes.</p>
+                <div class="space-x-4">
+                    <a href="#portfolio" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Ver Portfólio</a>
+                    <a href="#contact" class="bg-white text-primary px-8 py-3 rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">Fale Conosco</a>
+                </div>
+            </div>
+            <div class="md:w-1/2" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Web Development" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800"></div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up">Nossos Serviços de Excelência</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12" data-aos="fade-up" data-aos-delay="200">Soluções personalizadas para impulsionar seu negócio digital</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-laptop-code text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">Desenvolvimento Web Personalizado</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Criamos sites sob medida que refletem a identidade da sua marca e atendem às necessidades específicas do seu negócio.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-mobile-alt text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">Design Responsivo</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Garantimos que seu site funcione perfeitamente em todos os dispositivos, proporcionando uma experiência consistente aos usuários.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-search text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">Otimização para SEO</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Implementamos as melhores práticas de SEO para melhorar a visibilidade do seu site nos motores de busca.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-server text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">Desenvolvimento Backend</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Criamos APIs robustas e sistemas backend escaláveis para suportar suas aplicações web e móveis.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-shopping-cart text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">E-commerce</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Desenvolvemos lojas online personalizadas e otimizadas para conversão, integrando sistemas de pagamento e gestão de estoque.</p>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-chart-line text-4xl text-primary mb-4 dark:text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-4">Análise de Dados</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Implementamos soluções de analytics para ajudar você a entender o comportamento dos usuários e tomar decisões baseadas em dados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900"></div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up">Nossos Projetos de Sucesso</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12" data-aos="fade-up" data-aos-delay="200">Conheça algumas das nossas soluções que transformaram negócios</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80" alt="E-commerce Inovador" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('projeto1')">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-commerce Inovador</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Plataforma de comércio eletrônico com design moderno e funcionalidades avançadas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">PHP</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">MySQL</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="App de Gestão" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('projeto2')">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">App de Gestão</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Aplicativo web para gerenciamento de projetos e equipes com interface intuitiva.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Laravel</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-purple-900 dark:text-purple-300">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300">Tailwind CSS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Blog Corporativo" class="w-full h-48 object-cover cursor-pointer" onclick="openModal('projeto3')">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Blog Corporativo</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Blog responsivo e otimizado para SEO, aumentando o tráfego orgânico em 200%.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-pink-900 dark:text-pink-300">WordPress</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-orange-900 dark:text-orange-300">SEO</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-teal-900 dark:text-teal-300">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up">Minhas Habilidades Técnicas</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12" data-aos="fade-up" data-aos-delay="200">Domínio em tecnologias de ponta para criar soluções robustas e eficientes</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fab fa-php text-6xl text-primary mb-4 dark:text-blue-400"></i>
+                    <span class="text-lg font-semibold">PHP</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fab fa-js text-6xl text-yellow-500 mb-4"></i>
+                    <span class="text-lg font-semibold">JavaScript</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fab fa-html5 text-6xl text-red-500 mb-4"></i>
+                    <span class="text-lg font-semibold">HTML5</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fab fa-css3-alt text-6xl text-blue-500 mb-4"></i>
+                    <span class="text-lg font-semibold">CSS3</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fab fa-laravel text-6xl text-red-600 mb-4"></i>
+                    <span class="text-lg font-semibold">Laravel</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fab fa-vuejs text-6xl text-green-500 mb-4"></i>
+                    <span class="text-lg font-semibold">Vue.js</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="700">
+                    <i class="fas fa-database text-6xl text-gray-600 mb-4 dark:text-gray-400"></i>
+                    <span class="text-lg font-semibold">MySQL</span>
+                </div>
+                <div class="flex flex-col items-center" data-aos="fade-up" data-aos-delay="800">
+                    <i class="fab fa-git-alt text-6xl text-orange-500 mb-4"></i>
+                    <span class="text-lg font-semibold">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Desenvolvedor Full Stack" class="rounded-full shadow-2xl w-64 h-64 object-cover mx-auto">
+                </div>
+                <div class="md:w-1/2 md:pl-12" data-aos="fade-left">
+                    <h2 class="text-4xl font-bold mb-6">Quem Sou Eu</h2>
+                    <p class="text-xl mb-6 text-gray-600 dark:text-gray-300">Sou um desenvolvedor full stack apaixonado por criar soluções web inovadoras e eficientes. Com mais de 5 anos de experiência, especializei-me em PHP e JavaScript, construindo aplicações robustas e escaláveis.</p>
+                    <p class="text-xl mb-8 text-gray-600 dark:text-gray-300">Minha abordagem combina criatividade no front-end com solidez no back-end, garantindo projetos completos e de alta qualidade. Estou sempre atualizado com as últimas tendências e tecnologias para oferecer as melhores soluções aos meus clientes.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Entre em Contato</a>
+                        <a href="https://github.com/seuusername" target="_blank" rel="noopener noreferrer" class="bg-gray-800 text-white px-8 py-3 rounded-full hover:bg-gray-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 dark:bg-gray-700 dark:hover:bg-gray-600">
+                            <i class="fab fa-github mr-2"></i>GitHub
+                        </a>
+                        <a href="/caminho-para-seu-cv.pdf" download class="bg-green-500 text-white px-8 py-3 rounded-full hover:bg-green-600 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <i class="fas fa-download mr-2"></i>Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-gray-100 to-white dark:from-gray-900 dark:to-gray-800"></div>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up">O Que Nossos Clientes Dizem</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12" data-aos="fade-up" data-aos-delay="200">Feedback de clientes satisfeitos com nossas soluções</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">"O desenvolvedor superou todas as nossas expectativas. O novo site aumentou nossas conversões em 50%!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/17.jpg" alt="Cliente 1" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <p class="font-semibold">Maria Silva</p>
+                            <p class="text-gray-500 dark:text-gray-400">CEO, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">"Profissional extremamente competente e dedicado. Recomendo sem hesitação!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 2" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <p class="font-semibold">João Santos</p>
+                            <p class="text-gray-500 dark:text-gray-400">Diretor de Marketing, InovaTech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">"O suporte pós-projeto é excepcional. Estamos muito satisfeitos com os resultados!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente 3" class="rounded-full w-12 h-12 mr-4">
+                        <div>
+                            <p class="font-semibold">Ana Oliveira</p>
+                            <p class="text-gray-500 dark:text-gray-400">Gerente de Projetos, StartupX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="w-full h-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-800 dark:to-gray-900"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-4 text-center" data-aos="fade-up">Vamos Conversar Sobre Seu Projeto</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 text-center mb-12" data-aos="fade-up" data-aos-delay="200">Estou pronto para transformar suas ideias em realidade</p>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6" data-aos="fade-up">
+                    <div>
+                        <label for="name" class="block mb-2 font-semibold">Nome</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 font-semibold">E-mail</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-semibold">Mensagem</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">DevMaster</h3>
+                    <p class="mb-4">Transformando ideias em realidade digital.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Serviços</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Desenvolvimento Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Design Responsivo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Otimização SEO</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">E-commerce</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors duration-300">Início</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors duration-300">Serviços</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors duration-300">Portfólio</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">Sobre</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Rua da Inovação, 123 - São Paulo, SP</p>
+                    <p class="mb-2"><i class="fas fa-phone mr-2"></i> (11) 1234-5678</p>
+                    <p class="mb-2"><i class="fas fa-envelope mr-2"></i> contato@devmaster.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 DevMaster. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed z-50 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full dark:bg-gray-800">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4 dark:bg-gray-800">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title"></h3>
+                            <div class="mt-2">
+                                <img id="modal-image" src="" alt="Projeto" class="w-full h-64 object-cover rounded-lg mb-4">
+                                <p class="text-sm text-gray-500 dark:text-gray-300" id="modal-description"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse dark:bg-gray-700">
+                    <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                        Fechar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Header background change on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-white', 'shadow-md', 'dark:bg-gray-800');
+            } else {
+                header.classList.remove('bg-white', 'shadow-md', 'dark:bg-gray-800');
+            }
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        function updateDarkModeIcon() {
+            if (html.classList.contains('dark')) {
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        updateDarkModeIcon();
+
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+            updateDarkModeIcon();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(projectId) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalDescription = document.getElementById('modal-description');
+
+            // Set content based on projectId
+            if (projectId === 'projeto1') {
+                modalTitle.textContent = 'E-commerce Inovador';
+                modalImage.src = 'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2089&q=80';
+                modalDescription.textContent = 'Plataforma de comércio eletrônico com design moderno e funcionalidades avançadas. Desenvolvida com PHP, MySQL e JavaScript.';
+            } else if (projectId === 'projeto2') {
+                modalTitle.textContent = 'App de Gestão';
+                modalImage.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80';
+                modalDescription.textContent = 'Aplicativo web para gerenciamento de projetos e equipes com interface intuitiva. Construído com Laravel, Vue.js e Tailwind CSS.';
+            } else if (projectId === 'projeto3') {
+                modalTitle.textContent = 'Blog Corporativo';
+                modalImage.src = 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80';
+                modalDescription.textContent = 'Blog responsivo e otimizado para SEO, aumentando o tráfego orgânico em 200%. Desenvolvido com WordPress e técnicas avançadas de SEO.';
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+        }
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
